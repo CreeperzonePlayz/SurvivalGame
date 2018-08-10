@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Collision : MonoBehaviour {//Start
 
     //Public 
     public PlayerMovement playermove;
     public MeshRenderer playermesh;
-
+    public GameObject CompletedLevelText;
+    public GameObject DeadText;
 
     //Private
 
@@ -19,12 +20,13 @@ public class Collision : MonoBehaviour {//Start
         if (collisionInfo.collider.tag == "Wall")
         {
             playermove.enabled = false;
+            DeadText.SetActive(true);
         }
         if (collisionInfo.collider.tag == "WinLevel")
         {
             playermove.enabled = false;
             playermesh.enabled = false;
-            Debug.Log("Win!");
+            CompletedLevelText.SetActive(true);
         }
 	}
     //void start only checks once game is started
