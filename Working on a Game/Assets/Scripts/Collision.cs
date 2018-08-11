@@ -9,6 +9,8 @@ public class Collision : MonoBehaviour {//Start
     public MeshRenderer playermesh;
     public GameObject CompletedLevelText;
     public GameObject DeadText;
+    public AudioSource Ding;
+    public AudioSource X;
 
     //Private
 
@@ -21,12 +23,15 @@ public class Collision : MonoBehaviour {//Start
         {
             playermove.enabled = false;
             DeadText.SetActive(true);
+            X.Play();
+
         }
         if (collisionInfo.collider.tag == "WinLevel")
         {
             playermove.enabled = false;
             playermesh.enabled = false;
             CompletedLevelText.SetActive(true);
+            Ding.Play();
         }
 	}
     //void start only checks once game is started
