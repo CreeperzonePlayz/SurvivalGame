@@ -25,6 +25,7 @@ public class Collision : MonoBehaviour {//Start
             DeadText.SetActive(true);
             X.Play();
 
+
         }
         if (collisionInfo.collider.tag == "WinLevel")
         {
@@ -34,6 +35,7 @@ public class Collision : MonoBehaviour {//Start
             Ding.Play();
         }
 	}
+  
     //void start only checks once game is started
 	private void Start()
 	{
@@ -44,5 +46,6 @@ public class Collision : MonoBehaviour {//Start
 	{
 		
 	}
+
 
 }//End
